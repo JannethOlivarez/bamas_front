@@ -1,0 +1,24 @@
+<div>
+    <p-panel header="Historia Clínica">
+        <p-panel>
+         
+                Fecha:
+                <input type="text" pInputText />
+  
+
+        </p-panel>
+        <form #myform="ngForm" (ngSubmit)="myform.valid && guardar()">
+            <p-accordion [multiple]="true">
+                <p-accordionTab header="Datos Personales">
+                    Content 1
+                </p-accordionTab>
+                <p-accordionTab header="Datos de Servicio Militar">
+                    Content 2
+                </p-accordionTab>
+                <p-accordionTab header="Antecedentes">
+                    Content 3
+                </p-accordionTab>
+            </p-accordion>
+        </form>
+    </p-panel>
+</div>

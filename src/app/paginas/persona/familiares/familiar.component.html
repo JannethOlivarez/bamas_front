@@ -1,0 +1,33 @@
+<div class="ui-g">
+    <div class="ui-g-12" style="text-align: right">
+        <button pButton type="button" label="Nuevo" (click)="nuevo(myform)"></button>
+    </div>
+    <div class="ui-g-12">
+        <p-table [value]="registros" [lazy]="true" (onLazyLoad)="loadPersonaLazy($event)" [paginator]="true"
+            [rows]="constantes.tamanoPagina" [totalRecords]="totalRegistros">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols">
+                        {{col['header']}}
+                    </th>
+
+                    <th>
+                        Opciones
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-registro>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        {{registro[col.field]}}
+                    </td>
+
+                    <td class="center">
+                        <p-button icon="pi pi-pencil" (click)="editar(registro)"></p-button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>
